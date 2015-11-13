@@ -32,7 +32,7 @@ Unity's 2D Roguelike Tutorial: A grid-based roguelike with random procedural gen
 
 * Player is instantiated at runtime in `BoardManager.cs` (instead of already existing in scene).
 
-* **Experimentation:**
+**Experimentation:**
 
 * Use Vector3.SmoothDamp for `SmoothMovement()` method in `MovingObject.cs`.
 	* `rb2D.MovePosition(end);` to ensure player's transform position is integral after movement.
