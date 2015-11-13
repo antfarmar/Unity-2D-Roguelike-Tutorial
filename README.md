@@ -6,6 +6,8 @@ Unity's 2D Roguelike Tutorial: A grid-based roguelike with random procedural gen
 
 * **The game interestingly uses Physics2D/Rigidbody2D/Collider2D for movement/collision-detection.**
 	* Not such an issue for smaller game boards, but could be overkill for larger boards.
+	* Bug prone: If not implemented properly, player & enemy can overlap on same tile.
+		* This can actually happen in the given implementation.
 
 * **There is no traditional internal data model of of the grid-based game board:**
 	* e.g. No int[,] storing game tile types/positions as integers.
@@ -32,8 +34,8 @@ Unity's 2D Roguelike Tutorial: A grid-based roguelike with random procedural gen
 
 * Player is instantiated at runtime in `BoardManager.cs` (instead of already existing in scene).
 
-* **Experimentation:**
+**Experimentation:**
 
-* Use Vector3.SmoothDamp for `SmoothMovement()` method in `MovingObject.cs`.
+* Use `Vector3.SmoothDamp` for `SmoothMovement()` method in `MovingObject.cs`.
 	* `rb2D.MovePosition(end);` to ensure player's transform position is integral after movement.
 
