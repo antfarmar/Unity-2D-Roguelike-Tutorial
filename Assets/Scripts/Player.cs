@@ -55,8 +55,8 @@ public class Player : MovingObject
 
     private void Update()
     {
-        //If it's not the player's turn, exit the function.
-        if (!GameManager.instance.playersTurn) return;
+        //If it's not the player's turn, or we are doing setup, exit the function.
+        if (!GameManager.instance.playersTurn || GameManager.instance.doingSetup) return;
 
         int horizontal = 0;     //Used to store the horizontal move direction.
         int vertical = 0;       //Used to store the vertical move direction.
@@ -256,6 +256,9 @@ public class Player : MovingObject
 
             //Stop the background music.
             SoundManager.instance.musicSource.Stop();
+
+            // Disable the player.
+            enabled = false;
 
             //Call the GameOver function of GameManager.
             GameManager.instance.GameOver();

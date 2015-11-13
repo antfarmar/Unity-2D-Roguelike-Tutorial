@@ -22,13 +22,17 @@ Unity's 2D Roguelike Tutorial: A grid-based roguelike with random procedural gen
 		* `Input.GetAxisRaw()` -> {-1,1} would be perfect for index arithmetic.
 
 -----------------------
-## My Current Edits:
+## Some Current Edits:
 
-* Added some alpha in canvas color to see board for debugging setup.
+* Added UNITY_WEBGL to preprocessor directive for inputs in `Player.cs`.
+
+* Added some alpha in canvas color to see board for debugging the setup.
 	* Bug found: Player can actually move 1 tile during setup.
+		* See Issues for a quick fix.
 
 * Player is instantiated at runtime in `BoardManager.cs` (instead of existing in scene).
 
-* Using Vector3.SmoothDamp for `SmoothMovement()` method in `MovingObject.cs`.
+* Use Vector3.SmoothDamp for `SmoothMovement()` method in `MovingObject.cs`.
+	* Just for experimentation.
 	* `rb2D.MovePosition(end);` to ensure player's transform position is integral after movement.
 
