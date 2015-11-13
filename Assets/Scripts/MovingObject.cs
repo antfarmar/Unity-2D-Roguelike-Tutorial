@@ -71,6 +71,7 @@ public abstract class MovingObject : MonoBehaviour
 
         Vector3 velocity = Vector3.one;
         float sumTime = 0f;
+
         //While that distance is greater than a very small amount (Epsilon, almost zero):
         //while (sqrRemainingDistance > float.Epsilon)
         while (moveTime > sumTime)
@@ -90,7 +91,9 @@ public abstract class MovingObject : MonoBehaviour
             //Return and loop until sqrRemainingDistance is close enough to zero to end the function
             yield return null;
         }
+
         Debug.Log(sumTime);
+
         // Clear any rounding errors. Integer position.
         rb2D.MovePosition(end);
     }

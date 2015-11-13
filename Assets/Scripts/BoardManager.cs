@@ -28,7 +28,7 @@ public class BoardManager : MonoBehaviour
     public Count wallCount = new Count(5, 9);                       //Lower and upper limit for our random number of walls per level.
     public Count foodCount = new Count(1, 5);                       //Lower and upper limit for our random number of food items per level.
 
-    public GameObject player;
+    public GameObject player;                                       //Prefab to spawn player.
     public GameObject exit;                                         //Prefab to spawn for exit.
     public GameObject[] floorTiles;                                 //Array of floor prefabs.
     public GameObject[] wallTiles;                                  //Array of wall prefabs.
@@ -150,7 +150,7 @@ public class BoardManager : MonoBehaviour
         //Instantiate the exit tile in the upper right hand corner of our game board
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
 
-        //Instantiate the exit tile in the upper right hand corner of our game board
+        //Instantiate the player in the lower left hand corner of our game board
         Instantiate(player, Vector3.zero, Quaternion.identity);
     }
 }
