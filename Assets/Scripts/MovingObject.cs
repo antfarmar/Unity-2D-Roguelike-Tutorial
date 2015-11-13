@@ -92,7 +92,7 @@ public abstract class MovingObject : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log(sumTime);
+        //Debug.Log(sumTime);
 
         // Clear any rounding errors. Integer position.
         rb2D.MovePosition(end);
